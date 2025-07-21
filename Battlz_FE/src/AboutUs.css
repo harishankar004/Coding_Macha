@@ -1,0 +1,90 @@
+.about-container {
+  min-height: 100vh;
+  background: #0f0f0f;
+  padding: 100px 20px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+}
+
+.about-content {
+  max-width: 850px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 35px rgba(255, 105, 180, 0.25);
+  color: #222;
+  backdrop-filter: blur(10px);
+  transition: 0.3s ease;
+}
+
+.about-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(255, 105, 180, 0.4);
+}
+
+.about-content h1 {
+  font-size: 2.5rem;
+  color: #ff69b4;
+  margin-bottom: 20px;
+}
+
+.about-content h2 {
+  font-size: 1.6rem;
+  color: #ff1493;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.about-content p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.about-content strong {
+  color: #d63384;
+}
+
+.features ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.features ul li {
+  margin-bottom: 10px;
+  padding-left: 1.2rem;
+  position: relative;
+  font-size: 1.05rem;
+}
+
+.features ul li::before {
+  content: '✔️';
+  position: absolute;
+  left: 0;
+  color: #ff69b4;
+}

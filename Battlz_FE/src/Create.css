@@ -1,0 +1,129 @@
+/* Add a top margin so content doesn't go under the navbar */
+.create-container {
+  min-height: 100vh;
+  padding: 6rem 1rem 3rem 1rem;
+  background: #0f0f0f;
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(255, 33, 100, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.06) 0%, transparent 50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  position: relative;
+  z-index: 1;
+  overflow-x: hidden;
+}
+
+/* Centered content block */
+.create-card {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Heading */
+.create-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Labels */
+.create-label {
+  font-size: 1.2rem;
+  color: #ff2164;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  width: 100%;
+}
+
+/* Inputs */
+.create-input {
+  width: 100%;
+  height: 150px;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.02);
+  color: #fff;
+  border-radius: 12px;
+  resize: none;
+  margin-bottom: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.create-input:focus {
+  outline: none;
+  border-color: #ff2164;
+  box-shadow: 0 0 0 3px rgba(255, 33, 100, 0.2);
+}
+
+/* Submit button */
+.create-btn {
+  background: #ffffff;
+  color: #0f0f0f;
+  font-weight: 700;
+  padding: 0.9rem 2rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.create-btn:hover {
+  background: #eaeaea;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+}
+
+/* Room ID Info */
+.room-info {
+  color: #fff;
+  margin-top: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Wrap buttons side by side with spacing */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* 👈 horizontal space between buttons */
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Back to home button */
+.back-btn {
+  background: rgba(255, 33, 100, 0.1);
+  border: 1px solid rgba(255, 33, 100, 0.3);
+  color: #ff2164;
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: rgba(255, 33, 100, 0.2);
+  border-color: rgba(255, 33, 100, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 33, 100, 0.2);
+}

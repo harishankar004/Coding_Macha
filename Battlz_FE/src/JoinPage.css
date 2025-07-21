@@ -1,0 +1,168 @@
+/* JoinPage Layout */
+.join-container {
+  height: 100vh; /* Full screen height */
+  display: flex;
+  background: #0f0f0f;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  gap: 2rem;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+/* Left Section */
+.join-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 30px;
+}
+
+/* Shared card style (Question & Testcase box) */
+.question-box,
+.testcase-box {
+  flex: 1;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+}
+
+/* Editor Panel */
+.editor-panel {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Editor Header */
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Language Selector */
+.language-select {
+  padding: 0.6rem 1rem;
+  background: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #333;
+  border-radius: 8px;
+  outline: none;
+}
+
+/* Timer */
+.timer {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #00e6e6;
+}
+
+/* Code Editor */
+.code-editor {
+  flex: 1;
+  padding: 1rem;
+  font-family: 'Fira Code', monospace;
+  font-size: 1rem;
+  background: #1a1a1a;
+  color: #ffffff;
+  border: 1px solid #444;
+  border-radius: 12px;
+  resize: none;
+  outline: none;
+  margin-bottom: 1.5rem;
+  min-height: 300px;
+}
+
+/* Button Group */
+.editor-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+/* Buttons */
+.submit-btn,
+.run-btn,
+.clear-btn {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: 0.3s ease all;
+}
+
+.submit-btn {
+  background: #00b894;
+  color: #fff;
+}
+.submit-btn:hover {
+  background: #019875;
+}
+
+.run-btn {
+  background: #0984e3;
+  color: #fff;
+}
+.run-btn:hover {
+  background: #077cc7;
+}
+
+.clear-btn {
+  background: #d63031;
+  color: #fff;
+}
+.clear-btn:hover {
+  background: #c0392b;
+}
+
+/* Scrollbar styling for cards */
+.question-box::-webkit-scrollbar,
+.testcase-box::-webkit-scrollbar {
+  width: 6px;
+}
+.question-box::-webkit-scrollbar-thumb,
+.testcase-box::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 10px;
+}
+/* Back Button Style */
+.back-button {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  padding: 7px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  z-index: 999;
+  transition: background 0.3s ease;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.timer {
+  color: hsl(335, 100%, 57%);
+  font-weight: bold;
+  font-size: 16px;
+}

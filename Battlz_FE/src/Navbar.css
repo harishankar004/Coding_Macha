@@ -1,0 +1,111 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  width: 100%;
+  padding: 20px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  backdrop-filter: blur(8px);
+  border-bottom: none;
+}
+
+/* Logo Section */
+.navbar-logo {
+  font-size: 28px;
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+/* Make “Code” pink */
+.navbar-logo span {
+  color: #ff2164;
+}
+
+/* Push the links + login to the right */
+.navbar-links {
+  margin-left: auto;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+/* Link styling */
+.navbar-links a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #ffffffcc;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+/* On hover */
+.navbar-links a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ff2164;
+}
+
+/* Login button container with extra space */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* More space between About Us and Login */
+  margin-left: 1.5rem;
+}
+
+/* Login button styling (like Join Room) */
+.login-btn {
+  padding: 12px 24px;
+  border: 2px solid #ff2e74;
+  background-color: rgba(255, 46, 116, 0.08);
+  color: #ff2e74;
+  border-radius: 12px;
+  font-weight: 475;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #ff2e74;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Mobile responsive tweaks */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 24px;
+  }
+
+  .navbar-links {
+    margin-left: 0;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .navbar-actions {
+    margin-left: 0;
+    margin-top: 12px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
