@@ -10,10 +10,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class User {
 
     @Id
-    private int id;
+    private String id;
 
+    @Pattern(
+            regexp = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{6,15}$",
+            message = "Username must be 6–15 characters long and contain both letters and numbers"
+    )
     @NotBlank(message = "Username is required")
     private String username;
+
 
     @NotBlank(message = "Password is required")
     @Pattern(
@@ -28,11 +33,11 @@ public class User {
 
     // Getters and Setters
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

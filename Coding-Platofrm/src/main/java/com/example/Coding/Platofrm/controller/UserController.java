@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.example.Coding.Platofrm.dto.LoginRequest;
-
+import java.util.*;
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
@@ -24,11 +24,14 @@ public class UserController {
     public ResponseEntity<?> login(@RequestBody LoginRequest request) {
         try {
             String message = userService.login(request.getUsername(), request.getPassword());
-            return ResponseEntity.ok(message);
+            return ResponseEntity.ok(Map.of("message", message)); // ✅ JSON
         } catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e.getMessage());
+            return ResponseEntity
+                    .status(HttpStatus.UNAUTHORIZED)
+                    .body(Map.of("error", e.getMessage())); // ✅ JSON error
         }
     }
+
 
 
     @GetMapping("/{username}")

@@ -7,13 +7,44 @@ const LoginRegister = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = () => {
-    if (isLogin) {
-      console.log('Login', { username, password });
-    } else {
-      console.log('Register', { username, email, password });
+const handleSubmit = async () => {
+  try {
+    const endpoint = isLogin
+      ? "http://localhost:8082/api/users/login"
+      : "http://localhost:8082/api/users/register";
+
+    const payload = isLogin
+      ? { username, password }
+      : { username, email, password };
+
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      alert(data.error || "An error occurred");
+      return;
     }
-  };
+
+    if (isLogin) {
+      alert("Login successful");
+      // Store user info if needed
+      localStorage.setItem("username", username);
+      // Navigate or update global state here if needed
+    } else {
+      alert("Registration successful");
+      setIsLogin(true);
+    }
+  } catch (error) {
+    alert("Request failed: " + error.message);
+  }
+};
 
   const toggleMode = () => {
     setIsLogin(!isLogin);

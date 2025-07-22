@@ -18,9 +18,25 @@ public class UserService {
     private PasswordEncoder passwordEncoder;
 
     public User registerUser(User user) {
+        if (userRepository.findByUsername(user.getUsername()).isPresent()) {
+            throw new RuntimeException("Username already exists");
+        }
+
+        // Generate unique 6-digit user ID
+        String randomId;
+        do {
+            randomId = String.valueOf(100000 + (int)(Math.random() * 900000));
+        } while (userRepository.findById(randomId).isPresent());
+        user.setId(randomId);
+
+        // Encrypt password
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+
         return userRepository.save(user);
     }
+
+
+
 
     // ✅ Updated this method to resolve return type mismatch
     public User getUser(String username) {
